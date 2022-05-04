@@ -11,4 +11,4 @@ spec:
     - ./groups/default-org.yaml
     - ./systems/tap-gui-system.yaml
     - ./domains/tap-gui-domain.yaml
-    - https://dev.azure.com/doddatvmware/_git/tanzu-java-web-app?path=/catalog-info.yaml&version=GBdev&_a=contents
+    - https://dev.azure.com/doddatvmware/tap-lab-canary-app/_git/system-software-catalog?path=/catalog-info.yaml
