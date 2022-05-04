@@ -1,0 +1,15 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: platform-team
+  description: Platform Team
+spec:
+  type: team
+  profile:
+    displayName: Platform Team
+    email: platform-team@winterfell.fun
+    picture: https://avatars.dicebear.com/api/identicon/platform-team@winterfell.fun.svg?background=%23fff&margin=25
+  parent: default-org
+  children: []
+
+
