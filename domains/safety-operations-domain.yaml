@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
+  name: safety-operations-domain
+  description: Everything related to the Safety Operations
+  annotations:
+    'backstage.io/techdocs-ref': dir:.
+spec:
+  owner: avengers-dev-team
