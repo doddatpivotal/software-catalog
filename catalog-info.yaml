@@ -7,9 +7,6 @@ metadata:
     'backstage.io/techdocs-ref': dir:.
 spec:
   targets:
-    - ./components/tap-gui.yaml
     - ./groups/default-org.yaml
-    - ./systems/tap-gui-system.yaml
-    - ./domains/tap-gui-domain.yaml
     - ./domains/platform-domain.yaml
     - https://dev.azure.com/doddatvmware/tap-lab-canary-app/_git/system-software-catalog?path=/catalog-info.yaml
