@@ -9,4 +9,6 @@ spec:
   targets:
     - ./groups/default-org.yaml
     - ./domains/platform-domain.yaml
+    - ./domains/safety-operations-domain.yaml
     - https://dev.azure.com/doddatvmware/tap-lab-canary-app/_git/system-software-catalog?path=/catalog-info.yaml
+    - https://dev.azure.com/doddatvmware/tap-lab-spring-sensors/_git/system-software-catalog?path=/catalog-info.yaml    
