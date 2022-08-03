@@ -74,26 +74,305 @@ spec:
   definition: |
     openapi: 3.0.1
     info:
-      title: Demo API
-      description: defaultDescription
-      version: '0.1'
-    servers:
-      - url: https://api.agify.io
+      title: Employee TODO service
+      description: A simple employee todo list
+      version: v1
+    servers: 
+      - url: https://dotnet-todos.tap-run-test.tanzu-azure-lab.winterfell.fun/api
+        description: Test Environment
+      - url: https://dotnet-todos.tap-run-prod.tanzu-azure-lab.winterfell.fun/api
+        description: Prod Environment
     paths:
-      /:
+      "/api/Employees":
         get:
-          description: Auto generated using Swagger Inspector
-          parameters:
-            - name: name
-              in: query
-              schema:
-                type: string
-              example: type_any_name
+          tags:
+          - Employees
           responses:
             '200':
-              description: Auto generated using Swagger Inspector
+              description: Success
               content:
-                application/json; charset=utf-8:
+                text/plain:
                   schema:
-                    type: string
-                  examples: {}
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/EmployeeViewModel"
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/EmployeeViewModel"
+                text/json:
+                  schema:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/EmployeeViewModel"
+        post:
+          tags:
+          - Employees
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  "$ref": "#/components/schemas/EmployeeDTO"
+              text/json:
+                schema:
+                  "$ref": "#/components/schemas/EmployeeDTO"
+              application/*+json:
+                schema:
+                  "$ref": "#/components/schemas/EmployeeDTO"
+          responses:
+            '200':
+              description: Success
+      "/api/Employees/{id}":
+        get:
+          tags:
+          - Employees
+          operationId: GetEmployeeById
+          parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+          responses:
+            '200':
+              description: Success
+        put:
+          tags:
+          - Employees
+          parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  "$ref": "#/components/schemas/EmployeeDTO"
+              text/json:
+                schema:
+                  "$ref": "#/components/schemas/EmployeeDTO"
+              application/*+json:
+                schema:
+                  "$ref": "#/components/schemas/EmployeeDTO"
+          responses:
+            '200':
+              description: Success
+        delete:
+          tags:
+          - Employees
+          parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+          responses:
+            '200':
+              description: Success
+      "/api/Todos/{employeeId}":
+        get:
+          tags:
+          - Todos
+          operationId: GetEmployeeTodos
+          parameters:
+          - name: employeeId
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+          responses:
+            '200':
+              description: Success
+              content:
+                text/plain:
+                  schema:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/TodoDTO"
+                application/json:
+                  schema:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/TodoDTO"
+                text/json:
+                  schema:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/TodoDTO"
+      "/api/Todos/{employeeId}/{id}":
+        get:
+          tags:
+          - Todos
+          operationId: GetTodoById
+          parameters:
+          - name: employeeId
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+          responses:
+            '200':
+              description: Success
+      "/api/Todos":
+        post:
+          tags:
+          - Todos
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  "$ref": "#/components/schemas/TodoDTO"
+              text/json:
+                schema:
+                  "$ref": "#/components/schemas/TodoDTO"
+              application/*+json:
+                schema:
+                  "$ref": "#/components/schemas/TodoDTO"
+          responses:
+            '200':
+              description: Success
+      "/api/Todos/{id}":
+        put:
+          tags:
+          - Todos
+          parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+          requestBody:
+            content:
+              application/json:
+                schema:
+                  "$ref": "#/components/schemas/TodoDTO"
+              text/json:
+                schema:
+                  "$ref": "#/components/schemas/TodoDTO"
+              application/*+json:
+                schema:
+                  "$ref": "#/components/schemas/TodoDTO"
+          responses:
+            '200':
+              description: Success
+        delete:
+          tags:
+          - Todos
+          parameters:
+          - name: id
+            in: path
+            required: true
+            schema:
+              type: integer
+              format: int32
+          responses:
+            '200':
+              description: Success
+    components:
+      schemas:
+        EmployeeViewModel:
+          type: object
+          properties:
+            id:
+              type: string
+              nullable: true
+            firstName:
+              type: string
+              nullable: true
+            lastName:
+              type: string
+              nullable: true
+            email:
+              type: string
+              nullable: true
+            department:
+              type: string
+              nullable: true
+          additionalProperties: false
+        EmployeeDTO:
+          required:
+          - email
+          - firstName
+          - lastName
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            firstName:
+              maxLength: 50
+              minLength: 0
+              type: string
+            lastName:
+              maxLength: 50
+              minLength: 0
+              type: string
+            email:
+              maxLength: 100
+              minLength: 0
+              type: string
+            department:
+              type: string
+              nullable: true
+          additionalProperties: false
+        PriorityStatus:
+          enum:
+          - 0
+          - 1
+          - 2
+          type: integer
+          format: int32
+        States:
+          enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          type: integer
+          format: int32
+        TodoDTO:
+          required:
+          - employeeId
+          - priority
+          - state
+          - title
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            employeeId:
+              type: integer
+              format: int32
+            title:
+              maxLength: 50
+              minLength: 0
+              type: string
+            description:
+              maxLength: 500
+              minLength: 0
+              type: string
+              nullable: true
+            priority:
+              "$ref": "#/components/schemas/PriorityStatus"
+            state:
+              "$ref": "#/components/schemas/States"
+            estimate:
+              type: string
+              format: date-time
+          additionalProperties: false
