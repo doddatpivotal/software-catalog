@@ -1,0 +1,101 @@
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: animal-rescue
+  description: Animal Rescue Application
+spec:
+  owner: dev-team-2
+  domain: acme-internal-apps
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: animal-rescue-front-end
+  description: Animal Rescue Front End
+  tags:
+    - microservice
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=animal-rescue-front-end'
+spec:
+  type: service
+  lifecycle: alpha
+  owner: dev-team-2
+  system: animal-rescue
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: animal-rescue-back-end
+  description: Animal Rescue Back End
+  tags:
+    - microservice
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=animal-rescue-back-end'
+spec:
+  type: service
+  providesApis:
+    - animal-rescue-api
+  lifecycle: alpha
+  owner: dev-team-2
+  system: animal-rescue
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: animal-rescue-gateway
+  description: Tanzu Spring Cloud Gateway
+spec:
+  type: database
+  owner: platform-team
+  system: animal-rescue
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: animal-rescue-postgres
+  description: Tanzu SQL Postgres Database
+spec:
+  type: database
+  owner: platform-team
+  system: animal-rescue
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: animal-rescue-api
+  description: The API for Animal Rescue Application (placeholder)
+  links:
+    - url: https://api.agify.io
+      title: API Definition
+      icon: docs
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: dev-team-2
+  system: animal-rescue
+  definition: |
+    openapi: 3.0.1
+    info:
+      title: Demo API
+      description: defaultDescription
+      version: '0.1'
+    servers:
+      - url: https://api.agify.io
+    paths:
+      /:
+        get:
+          description: Auto generated using Swagger Inspector
+          parameters:
+            - name: name
+              in: query
+              schema:
+                type: string
+              example: type_any_name
+          responses:
+            '200':
+              description: Auto generated using Swagger Inspector
+              content:
+                application/json; charset=utf-8:
+                  schema:
+                    type: string
+                  examples: {}

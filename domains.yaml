@@ -1,9 +1,15 @@
 apiVersion: backstage.io/v1alpha1
 kind: Domain
 metadata:
+  name: acme-internal-apps
+  description: Acme Internal Applications
+spec:
+  owner: acme-dev
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata:
   name: platform-domain
   description: Everything related to the Platform
-  annotations:
-    'backstage.io/techdocs-ref': dir:.
 spec:
   owner: platform-team
