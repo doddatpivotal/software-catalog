@@ -3,6 +3,8 @@ kind: System
 metadata:
   name: spring-petclinic
   description: Pet Clinic Application
+  annotations:
+    backstage.io/source-location: url:https://dev.azure.com/doddatvmware/tap-lab-spring-petclinic/_git/spring-petclinic
 spec:
   owner: dev-team-1
   domain: acme-internal-apps
@@ -16,6 +18,7 @@ metadata:
     - microservice
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-petclinic'
+    backstage.io/source-location: url:https://dev.azure.com/doddatvmware/tap-lab-spring-petclinic/_git/spring-petclinic
 spec:
   type: service
   providesApis:
