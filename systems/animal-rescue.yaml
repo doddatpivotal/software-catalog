@@ -40,13 +40,16 @@ spec:
   system: animal-rescue
 ---
 apiVersion: backstage.io/v1alpha1
-kind: Resource
+kind: Component
 metadata:
   name: animal-rescue-gateway
   description: Tanzu Spring Cloud Gateway
+  annotations:
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=animal-rescue-back-end'
 spec:
-  type: database
-  owner: platform-team
+  type: service
+  lifecycle: alpha
+  owner: dev-team-2
   system: animal-rescue
 ---
 apiVersion: backstage.io/v1alpha1
