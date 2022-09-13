@@ -45,7 +45,7 @@ metadata:
   name: animal-rescue-gateway
   description: Tanzu Spring Cloud Gateway
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=animal-rescue-back-end'
+    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=spring-cloud-gateway'
 spec:
   type: service
   lifecycle: alpha
