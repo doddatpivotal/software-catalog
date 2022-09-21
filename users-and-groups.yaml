@@ -102,9 +102,9 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: cody@winterfell.live
+  name: doddatpivotal
 spec:
   profile:
-    displayName: cody
+    displayName: doddatpivotal
     email: cody@winterfell.live
   memberOf: [dev-team-1]
