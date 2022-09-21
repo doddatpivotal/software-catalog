@@ -98,3 +98,13 @@ spec:
     displayName: Alana
     email: alana@acme.com
   memberOf: [platform-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: cody@winterfell.live
+spec:
+  profile:
+    displayName: cody
+    email: cody@winterfell.live
+  memberOf: [dev-team-1]
