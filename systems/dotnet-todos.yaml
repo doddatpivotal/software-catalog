@@ -26,7 +26,7 @@ spec:
   providesApis:
     - dotnet-todos-api
   lifecycle: alpha
-  owner: dev-team-1
+  owner: doddatpivotal
   system: dotnet-todos
 
 ---
