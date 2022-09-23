@@ -112,7 +112,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: dpfeffer@vmware.com
+  name: dpfeffer-at-vmware-dot-com
 spec:
   profile:
     displayName: Dodd Pfeffer
