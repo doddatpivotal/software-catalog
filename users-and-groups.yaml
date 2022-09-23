@@ -118,13 +118,3 @@ spec:
     displayName: Dodd Pfeffer
     email: dpfeffer@vmware.com
   memberOf: [dev-team-1]
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: cody2
-spec:
-  profile:
-    displayName: Dodd Pfeffer
-    email: cody@winterfell.live
-  memberOf: [dev-team-1]  
