@@ -105,8 +105,7 @@ metadata:
   name: doddatpivotal
 spec:
   profile:
-    displayName: doddatpivotal
-    email: dpfeffer@vmware.com
+    displayName: Dodd Pfeffer
   memberOf: [dev-team-1]
 ---
 apiVersion: backstage.io/v1alpha1
