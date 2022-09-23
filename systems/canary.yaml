@@ -24,7 +24,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: platform-team
+  owner: "user:dpfeffer"
   system: canary
 ---
 apiVersion: backstage.io/v1alpha1
