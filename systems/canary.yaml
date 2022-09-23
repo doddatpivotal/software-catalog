@@ -24,7 +24,7 @@ metadata:
 spec:
   type: service
   lifecycle: production
-  owner: platform-team
+  owner: dpfeffer-at-vmware-dot-com #! hack, change this
   system: canary
 ---
 apiVersion: backstage.io/v1alpha1
