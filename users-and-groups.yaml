@@ -106,15 +106,25 @@ metadata:
 spec:
   profile:
     displayName: doddatpivotal
-    email: cody@winterfell.live
+    email: dpfeffer@vmware.com
   memberOf: [dev-team-1]
 ---
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: dpfeffer-at-vmware-dot-com
+  name: dpfeffer
 spec:
   profile:
     displayName: Dodd Pfeffer
     email: dpfeffer@vmware.com
+  memberOf: [dev-team-1]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: cody-okta
+spec:
+  profile:
+    displayName: Cody
+    email: cody@winterfell.live
   memberOf: [dev-team-1]
