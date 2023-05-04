@@ -46,3 +46,22 @@ spec:
   lifecycle: production
   owner: platform-team
   system: canary
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: emoji-inclusion
+  description: Simple spring-boot java app bringing smiles to your face
+  tags:
+    - java
+    - spring
+    - web
+    - tanzu
+  annotations:
+    backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=emoji-inclusion
+    backstage.io/source-location: url:https://github.com/tsalm-vmware/emoji-inclusion
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: canary
