@@ -60,6 +60,7 @@ metadata:
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=emoji-inclusion
     backstage.io/source-location: url:https://github.com/doddatpivotal/emoji-inclusion
+    backstage.tanzu.vmware.com/group.default.dev-team-1: 'catalog.entities.read'
 spec:
   type: service
   lifecycle: production
