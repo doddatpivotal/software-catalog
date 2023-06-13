@@ -60,8 +60,10 @@ metadata:
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=emoji-inclusion
     backstage.io/source-location: url:https://github.com/doddatpivotal/emoji-inclusion
-    #! Added below explicity to test new RBAC capability with TAP_GUI
+    #! Start: explicity to test new RBAC capability with TAP_GUI
     backstage.tanzu.vmware.com/group.default.dev-team-1: 'catalog.entities.read'
+    backstage.tanzu.vmware.com/user.default.guest: 'catalog.entities.read'
+    #! End
 spec:
   type: service
   lifecycle: production
