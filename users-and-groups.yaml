@@ -59,11 +59,11 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: User
 metadata:
-  name: shmody
+  name: shmaody
 spec:
   profile:
-    displayName: Shmody
-    email: shmody@acme.com
+    displayName: Shmaody
+    email: shmaody@acme.com
   memberOf: [dev-team-2]
 ---
 apiVersion: backstage.io/v1alpha1
@@ -127,3 +127,43 @@ spec:
     displayName: Cody
     email: cody@winterfell.live
   memberOf: [dev-team-1]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: naomi-okta
+spec:
+  profile:
+    displayName: Naomi
+    email: naomi@winterfell.live
+  memberOf: [dev-team-1]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: alana-okta
+spec:
+  profile:
+    displayName: Alana
+    email: alana@winterfell.live
+  memberOf: [platform-team]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: schmaody-okta
+spec:
+  profile:
+    displayName: Schmaody
+    email: schmaody@winterfell.live
+  memberOf: [dev-team-2]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: schmaomi-okta
+spec:
+  profile:
+    displayName: Schmaomi
+    email: schmaomi@winterfell.live
+  memberOf: [dev-team-2]
