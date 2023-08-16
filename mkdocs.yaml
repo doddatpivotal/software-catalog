@@ -1,0 +1,8 @@
+site_name: 'sample-tech-docs'
+
+nav:
+  - Home: index.md
+  - Details: details.md
+
+plugins:
+  - techdocs-core
